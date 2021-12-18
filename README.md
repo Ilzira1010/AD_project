@@ -33,7 +33,7 @@ Hi all, This is my first notebook. I am trying to perform Exploratory Data Analy
 
 Как только мы импортируем данные с помощью read_csv, используйте head() для выборки данных. Мы пытаемся идентифицировать числовые и категориальные данные.
 
-![sample-data](assers/image.png)
+![0](assers/0.jpg)
 
 ### 2. Data Preprocessing
 

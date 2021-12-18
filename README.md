@@ -79,34 +79,38 @@ from bokeh.plotting import figure, show, output_file
 from bokeh.layouts import row, column
 ```
 ![2](assers/2.jpg)
+![3](assers/3.jpg)
 
-we use one hot encoding by using `get_dummies()`
+Как мы видим курильщики тратят больше денег на лечение. Но мы все же считаем,что некурящих пациентов больше. Давайте это проверим
 
-![one hot encoding](assets/one-hot-encoding.JPG)
+![4](assers/4.jpg)
 
 
-We try to then find the correlation between features.
+Просим обратить внимание, что женщины кодируются символом "1", а мужчины - "0". При этом некурящих людей и правда больше. Также мы можем заметить, что курящих мужчин больше, чем курящих женщин. Можно предположить, что общая стоимость лечения у мужчин будет больше, чем у женщин, учитывая влияние курения. И еще несколько полезных визуализаций
 
-![eda](assets/eda.JPG)
+![5](assers/5.jpg)
+![6](assers/6.jpg)
 
-Using a heat map to explore the trends.
+Теперь давайте обратим внимание на возраст пациентов. Во-первых, давайте посмотрим, как возраст влияет на стоимость лечения, а также посмотрим на пациентов, какого возраста больше в нашем наборе данных.
 
-![heatmap](assets/corr-heatmap.JPG)
+![7](assers/7.jpg)
 
-From this we can see the following observations:
+В нашем наборе данных есть пациенты младше 20 лет. Мы взяли за минимальный возраст 18 лет,тк это возраст совершеннолетия и вроде как курение не запрещено..... Максимальный возраст - 64 года. Нас интересует, есть ли курильщики среди пациентов 18 лет.
+![8](assers/8.jpg)
 
-1. Strong correlation between charges and smoker_yes.
-2. Weak correlation between charges and age.
-3. Weak correlation between charges and bmi.
-4. Weak correlation between bmi and region_southeast.
-Since the values for the weak correlations are less than 0.5, we can term them as insignificant and drop them.
+Мдааа.... А мы надеялись, что результат будет другим. Давайте выясним влияет ли курение на стоимость лечения в этом возрасте?
 
-Exploring the trend between charges and smoker_yes.
-Finding the range of the treatment charges of patients using graphs.
+![9](assers/9.jpg)
 
-![range of charges](assets/charges_range.JPG)
+Как мы видим,даже в возрасте 18 лет курильщики тратят на лечение гораздо больше,чем некурящие.Среди некурящих мы наблюдаем некоторые аномалии. Мы предполагаем,что это эти аномалии - это несчастные случаи и серьезные заболевания.Теперь давайте посмотрим, как стоимость лечения зависит от возраста курильщиков и некурящих пациентов.
+![10](assers/10.jpg)
+![11](assers/11.jpg)
+![12](assers/12.jpg)
+![13](assers/13.jpg)
+![14](assers/14.jpg)
 
-From the graph, We can see the minimum charges are around 1122 for a high number of patients and maximum of 63770.
+У некурящих стоимость лечения увеличивается с возрастом.Оно и понятно! Так что берегите свое здоровье, друзья! У курящих людей мы не видим такой зависимости. Мы думаем, что дело не только в курении, но и в особенностях набора данных. О таком сильном влиянии курения на стоимость лечения логичнее было бы судить, имея набор данных с большим количеством записей и знаков. Но мы работаем с тем, что у нас есть! Давайте обратим внимание на ИМТ.
+![15](assers/15.jpg)
 
 ### 4. Model Building
 

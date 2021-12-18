@@ -18,7 +18,7 @@
 3. [Conclusion](https://github.com/Ilzira1010/AD_project#Conclusion)
   
 ## Components
-- Dataset(https://github.com/Ilzira1010/AD_project/blob/main/insurance.csv)
+- Dataset (https://github.com/Ilzira1010/AD_project/blob/main/insurance.csv)
 - Colaboratory (https://colab.research.google.com/drive/1DNcZoKtar8dX8luG_OVEF18e4YzSzXeN)
 - Python: numpy, pandas, matplotlib packages
 

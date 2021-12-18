@@ -5,22 +5,17 @@
 
 # Regression on Personal Health Data
 
-## Aim
-
-Predicting the cost of treatment and insurance using regression by leveraging personal health data.
-
-## Motivation
-Hi all, This is my first notebook. I am trying to perform Exploratory Data Analysis (EDA) and linear regression on personal health data. Any feedback and constructive criticism is appreciated. The personal heath data is hosted on Kaggle. Link: https://www.kaggle.com/mirichoi0218/insurance
+## Task
 
 ## Table of contents
-1. [Components](https://github.com/Thomas-George-T/Linear-Regression-on-Personal-Health-Data#Components)
-2. [Model Implementation](https://github.com/Thomas-George-T/Linear-Regression-on-Personal-Health-Data#model-implementation)
-   1. [Import Data](https://github.com/Thomas-George-T/Linear-Regression-on-Personal-Health-Data#1-import-data)
-   2. [Data Preprocessing](https://github.com/Thomas-George-T/Linear-Regression-on-Personal-Health-Data#2-data-preprocessing)
-   3. [Exploratory Data Analysis (EDA)](https://github.com/Thomas-George-T/Linear-Regression-on-Personal-Health-Data#3-exploratory-data-analysis-eda)
-   4. [Model Building](https://github.com/Thomas-George-T/Linear-Regression-on-Personal-Health-Data#4-model-building)
-   5. [Model Evaluation](https://github.com/Thomas-George-T/Linear-Regression-on-Personal-Health-Data#5-model-evaluation)
-3. [License](https://github.com/Thomas-George-T/Linear-Regression-on-Personal-Health-Data#License)
+1. [Components](https://github.com/Ilzira1010/AD_project#Components)
+2. [Model Implementation](https://github.com/Ilzira1010/AD_project#model-implementation)
+   1. [Import Data](https://github.com/Ilzira1010/AD_project#1-import-data)
+   2. [Data Preprocessing](https://github.com/Ilzira1010/AD_project#2-data-preprocessing)
+   3. [Exploratory Data Analysis (EDA)](https://github.com/Ilzira1010/AD_project#3-exploratory-data-analysis-eda)
+   4. [Model Building](https://github.com/Ilzira1010/AD_project#4-model-building)
+   5. [Model Evaluation](https://github.com/Ilzira1010/AD_project#5-model-evaluation)
+3. [Conclusion](https://github.com/Ilzira1010/AD_project#Conclusion)
   
 ## Components
 - [Kaggle Dataset](https://www.kaggle.com/mirichoi0218/insurance)

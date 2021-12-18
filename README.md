@@ -153,23 +153,52 @@ print(lr.score(x_test,y_test))
 ```python
 0.7962732059725786
 ```
+Неплохо.... Теперь давайте добавим полиномиальные знаки. И посмотрите на результат.
+```python
+X = data.drop(['charges','region'], axis = 1)
+Y = data.charges
 
+quad = PolynomialFeatures (degree = 2)
+x_quad = quad.fit_transform(X)
 
-![Model building](assets/model-building.JPG)
+X_train,X_test,Y_train,Y_test = train_test_split(x_quad,Y, random_state = 0)
 
-We then begin to predict the values of the patient charges using the other features. We build a linear regression model after importing the package `sklearn.linear_model`. We split the data set into training and test set. We use 30% of the dataset for testing using `test_size=0.3` 
-We take the predictor variable without the charges column and the target variable as charges.
-We proceed to fit the linear regression model for the test and training set using `fit()`. This part is called **Model fitting**. We check the prediction score of both and training and test set using `score()`. It comes out to be 79%, which is pretty decent I would say.
+plr = LinearRegression().fit(X_train,Y_train)
+
+Y_train_pred = plr.predict(X_train)
+Y_test_pred = plr.predict(X_test)
+
+print(plr.score(X_test,Y_test))
+```
+```python
+0.8849197344147228
+```
+Хорошо!Наша модель хорошо прогнозирует стоимость лечения пациентов. И, наконец, попробуем RandomForestRegressor.
 
 ### 5. Model Evaluation
 
-To evaluate our linear regression, we use R<sup>2</sup> and mean squared error.
+```python
+forest = RandomForestRegressor(n_estimators = 100,
+                              criterion = 'mse',
+                              random_state = 1,
+                              n_jobs = -1)
+forest.fit(x_train,y_train)
+forest_train_pred = forest.predict(x_train)
+forest_test_pred = forest.predict(x_test)
 
-![mode evaluation](assets/model-evaluation.JPG)
+print('MSE train data: %.3f, MSE test data: %.3f' % (
+mean_squared_error(y_train,forest_train_pred),
+mean_squared_error(y_test,forest_test_pred)))
+print('R2 train data: %.3f, R2 test data: %.3f' % (
+r2_score(y_train,forest_train_pred),
+r2_score(y_test,forest_test_pred)))
+```
+```python
+MSE train data: 3729086.094, MSE test data: 19933823.142
+R2 train data: 0.974, R2 test data: 0.873
+```
+![23](assers/23.jpg)
+## Conclusion
+Хороший результат. Но мы видим заметную переподготовку алгоритма на обучающих данных.
 
-On evaluating our model, it showed <bold>accuracy of 80%</bold> on the test data. 
-
-From the figure, Our evaluation metrics of R<sup>2</sup> and mean squared error of both training and test data are closely matching. This is enough to conclude our model is appropriate to predict patient charges based on their personal health data.
-
-## License
-This project is under the MIT License - see [License](LICENSE.md) for more details
+Всем спасибо за внимание!

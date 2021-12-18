@@ -37,27 +37,53 @@ Hi all, This is my first notebook. I am trying to perform Exploratory Data Analy
 
 ### 2. Data Preprocessing
 
-We proceed to collect basic descriptive stats using `describe()`. We try to understand what the data looks like and what it is trying to tell us.
+Нам крупно повезло,потому что в датасете нет "Nan"))))) Давайте посмотрим на наши данные, чтобы что-то понять. Поскольку нас в первую очередь интересует сумма затрат, посмотрим, какие данные больше коррелируют с расходами. Для начала закодируем категориальные признаки.
 
 ```python
-data.describe()
+new_data.isnull().sum()
 ```
 
-![describe](assets/describe.JPG)
+![16](assers/16.jpg)
 
-We then split the data into numerical and categorical data.
+```python
+from sklearn.preprocessing import LabelEncoder
+#пол
+le = LabelEncoder()
+le.fit(new_data.sex.drop_duplicates()) 
+new_data.sex = le.transform(new_data.sex)
+# курящий или нет
+le.fit(new_data.smoker.drop_duplicates()) 
+new_data.smoker = le.transform(new_data.smoker)
+#регион
+le.fit(new_data.region.drop_duplicates()) 
+new_data.region = le.transform(new_data.region)
+```
+Несколько слов о кодировке «region». Как правило, категориальные переменные имеют своиство неустоичивости и их лучше всего кодировать с помощью OneHotEncoder и так далее. Но в этом случае ничего не изменится, потому что нет особого порядка, в котором были бы перечислены регионы.
 
-![preprocessing](assets/preprocessing.JPG)
 
-We proceed to convert categorical data into numerical data. We use One hot encoding technique for this.
+### 3. Exploratory Data Analysis (EDA)
+```python
+new_data.corr()['charges'].sort_values()
+```
+![1](assers/1.jpg)
 
-One hot encoding is a technique where we replace the categorical data with binary digits. The categorical column is split into same number of columns as the values. The respective column is then given a '1' or a '0' corresponding to the values.
+Как мы можем заметить сильная корреляция наблюдается только с фактом курения больного. Мы думали,что высочайшая корреляция будет с BMI(Индекс массы тела). Давайте подробнее рассмотрим курение.
+
+```python
+from bokeh.io import output_notebook, show
+from bokeh.plotting import figure
+output_notebook()
+import scipy.special
+from bokeh.layouts import gridplot
+from bokeh.plotting import figure, show, output_file
+from bokeh.layouts import row, column
+```
+![2](assers/2.jpg)
 
 we use one hot encoding by using `get_dummies()`
 
 ![one hot encoding](assets/one-hot-encoding.JPG)
 
-### 3. Exploratory Data Analysis (EDA)
 
 We try to then find the correlation between features.
 

@@ -112,7 +112,48 @@ from bokeh.layouts import row, column
 У некурящих стоимость лечения увеличивается с возрастом.Оно и понятно! Так что берегите свое здоровье, друзья! У курящих людей мы не видим такой зависимости. Мы думаем, что дело не только в курении, но и в особенностях набора данных. О таком сильном влиянии курения на стоимость лечения логичнее было бы судить, имея набор данных с большим количеством записей и знаков. Но мы работаем с тем, что у нас есть! Давайте обратим внимание на ИМТ.
 ![15](assers/15.jpg)
 
+Мы видим очень красивый график. В среднем ИМТ у пациентов из выборки 30. Давайте загуглим этот показатель))))
+![17](assers/17.jpg)
+
+При значении, равном 30, начинается ожирение. Давайте посмотрим на распределение затрат у пациентов с ИМТ более 30 и менее 30.
+![18](assers/18.jpg)
+
+Пациенты с ИМТ выше 30 тратят больше на лечение!
+![19](assers/19.jpg)
+![20](assers/20.jpg)
+
+Давайте обратим внимание на детей. Во-первых, давайте посмотрим, сколько детей у наших пациентов.
+![21](assers/21.jpg)
+
+У большинства пациентов нет детей. Интересно, курят ли люди, у которых есть дети?
+![22](assers/22.jpg)
+
+Мы рады, что некурящих родителей гораздо больше!
+
+Теперь мы собираемся спрогнозировать стоимость лечения. Давайте начнем с обычной линейной регрессии.
+
 ### 4. Model Building
+```python
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.metrics import r2_score,mean_squared_error
+from sklearn.ensemble import RandomForestRegressor
+x = data.drop(['charges'], axis = 1)
+y = data.charges
+
+x_train,x_test,y_train,y_test = train_test_split(x,y, random_state = 0)
+lr = LinearRegression().fit(x_train,y_train)
+
+y_train_pred = lr.predict(x_train)
+y_test_pred = lr.predict(x_test)
+
+print(lr.score(x_test,y_test))
+```
+```python
+0.7962732059725786
+```
+
 
 ![Model building](assets/model-building.JPG)
 

@@ -31,7 +31,7 @@ Hi all, This is my first notebook. I am trying to perform Exploratory Data Analy
 
 ### 1. Import Data
 
-Once we import the Data using `read_csv`, we then use `head()` to sample the data . We try to identify numerical and categorical data.
+Как только мы импортируем данные с помощью read_csv, используйте head() для выборки данных. Мы пытаемся идентифицировать числовые и категориальные данные.
 
 ![sample-data](assers/image.png)
 

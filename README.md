@@ -33,7 +33,7 @@ Hi all, This is my first notebook. I am trying to perform Exploratory Data Analy
 
 Once we import the Data using `read_csv`, we then use `head()` to sample the data . We try to identify numerical and categorical data.
 
-![sample-data](assets/sample-data.JPG)
+![sample-data](assers/image.png)
 
 ### 2. Data Preprocessing
 

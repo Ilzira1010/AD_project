@@ -1,8 +1,3 @@
-![GitHub top language](https://img.shields.io/github/languages/top/Thomas-George-T/Regression-on-Personal-Health-Data)
-![GitHub last commit](https://img.shields.io/github/last-commit/Thomas-George-T/Regression-on-Personal-Health-Data?style=flat)
-![GitHub License](https://img.shields.io/github/license/Thomas-George-T/Regression-on-Personal-Health-Data?style=flat)
-![ViewCount](https://views.whatilearened.today/views/github/Thomas-George-T/Regression-on-Personal-Health-Data.svg?cache=remove)
-
 # Regression on Personal Health Data
 ## Table of contents
 1. [Components](https://github.com/Ilzira1010/AD_project#Components)
@@ -19,7 +14,7 @@
 ## Components
 - YouTube ()
 - Dataset (https://github.com/Ilzira1010/AD_project/blob/main/insurance.csv)
-- Colaboratory (https://colab.research.google.com/drive/1DNcZoKtar8dX8luG_OVEF18e4YzSzXeN)
+- Colaboratory (https://colab.research.google.com/drive/12aGttZtoJAWHPGzjJ9ES4_9sUlKGV0dT?usp=sharing#scrollTo=NUZ-qJwiXJvQ)
 - Python: numpy, pandas, matplotlib packages
 
 ## Introduction

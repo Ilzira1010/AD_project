@@ -12,7 +12,7 @@
 5. [Conclusion](https://github.com/Ilzira1010/AD_project#Conclusion)
 
 ## Components
-- YouTube ()
+- YouTube (https://www.youtube.com/watch?v=KS7_KXAMzfA&feature=youtu.be)
 - Dataset (https://github.com/Ilzira1010/AD_project/blob/main/insurance.csv)
 - Colaboratory (https://colab.research.google.com/drive/12aGttZtoJAWHPGzjJ9ES4_9sUlKGV0dT?usp=sharing#scrollTo=NUZ-qJwiXJvQ)
 - Python: numpy, pandas, matplotlib packages

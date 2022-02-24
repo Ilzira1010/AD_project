@@ -1,1 +1,38 @@
+import numpy as np 
+import pandas as pd 
+import os
+import matplotlib.pyplot as pl
+import seaborn as sns
 
+data = pd.read_csv('/content/Train_main(размеченная).csv', parse_dates = True)
+
+new_data = data
+new_data.head()
+
+#проверяем датасет на нулевые значения
+new_data.isnull().sum()
+
+new_data.drop(new_data[new_data['class'] == "NaN"].index, inplace =True)
+
+new_data.dropna(subset=['class'], inplace=True)
+
+new_data.isnull().sum()
+
+ # Import the vectorizer from sklearn.
+from sklearn.feature_extraction.text import TfidfVectorizer
+# Obtain some string samples.
+samples = ["x_component", "y_component"]
+# Get a char-based vectorizer with (1,2) n-gram range.
+vectorizer = TfidfVectorizer(analyzer='char', ngram_range=(1, 2))
+# Vectorize the samples.
+vectors = vectorizer.fit_transform(samples) 
+vectors
+
+# Import the model from sklearn.
+from sklearn.cluster import DBSCAN
+# Initialize and fir the model. Note that default model parameters are used;
+# some tuning might be necessary to improve performance.
+model = DBSCAN().fit(vectors)
+# Get a list of cluster IDs, where `-1` entries represent noisy samples.
+cluster_labels = model.labels_
+cluster_labels
